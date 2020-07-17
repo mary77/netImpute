@@ -1,0 +1,14 @@
+How to run:
+
+netImputeObj = netImpute()
+
+# load data (rows are genes and cols are cells)
+data = utils.load_data(data_path)
+
+# preProcessing (Optinal, remove unexpressed genes)
+data = netImputeObj.preProcessing(data)
+
+# library size normalization if data is not normalized
+data = netImputeObj.libSizeNorm(data)
+
+dataImputed = netImputeObj.impute(data, alpha =  0.5)
